@@ -1,5 +1,6 @@
 package ru.job4j.kraftconsumer.config;
 
+import org.springframework.kafka.listener.ContainerProperties;
 import ru.job4j.kraftconsumer.exception.NonRetryableException;
 import ru.job4j.kraftconsumer.exception.RetryableException;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
@@ -37,6 +38,8 @@ public class KafkaConfig {
         config.put(ErrorHandlingDeserializer.VALUE_DESERIALIZER_CLASS, JsonDeserializer.class);
         config.put(JsonDeserializer.TRUSTED_PACKAGES, environment.getProperty("spring.kafka.consumer.properties.spring.json.trusted.packages"));
         config.put(ConsumerConfig.GROUP_ID_CONFIG, environment.getProperty("spring.kafka.consumer.group-id"));
+        // для включения ручного режима подтверждения
+//        config.put(ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG, false);
         return new DefaultKafkaConsumerFactory<>(config);
     }
 
@@ -51,6 +54,8 @@ public class KafkaConfig {
         ConcurrentKafkaListenerContainerFactory<String, Object> factory = new ConcurrentKafkaListenerContainerFactory<>();
         factory.setConsumerFactory(consumerFactory);
         factory.setCommonErrorHandler(errorHandler);
+        // для использования ручного подтверждения
+//        factory.getContainerProperties().setAckMode(ContainerProperties.AckMode.MANUAL);
         return factory;
     }
 
