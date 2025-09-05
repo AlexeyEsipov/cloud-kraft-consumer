@@ -6,9 +6,9 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-public class EmailnotificationApplication {
+public class KraftConsumerApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(EmailnotificationApplication.class, args);
+		SpringApplication.run(KraftConsumerApplication.class, args);
 	}
 }
