@@ -8,11 +8,10 @@
 		<version>3.5.4</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>ru.esipov.ws</groupId>
-	<artifactId>EmailNotificationMicroservice</artifactId>
+	<groupId>ru.job4j</groupId>
+	<artifactId>kraftconsumer</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>emailnotification</name>
-	<description>Email Notification Microservice</description>
+	<name>kraftconsumer</name>
 	<url/>
 	<licenses>
 		<license/>
