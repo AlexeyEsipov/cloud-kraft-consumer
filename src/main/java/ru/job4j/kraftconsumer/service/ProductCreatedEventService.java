@@ -17,9 +17,9 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.client.HttpServerErrorException;
 import org.springframework.web.client.ResourceAccessException;
 import org.springframework.web.client.RestTemplate;
-import ru.job4j.core.ProductCreatedEvent;
-import ru.job4j.kraftconsumer.exception.NonRetryableException;
-import ru.job4j.kraftconsumer.exception.RetryableException;
+import ru.job4j.core.events.ProductCreatedEvent;
+import ru.job4j.core.exceptions.NonRetryableException;
+import ru.job4j.core.exceptions.RetryableException;
 import ru.job4j.kraftconsumer.persistence.entity.ProcessedEventEntity;
 import ru.job4j.kraftconsumer.persistence.repository.ProcessEventRepository;
 
